@@ -1,0 +1,31 @@
+{
+  "name": "touvoir",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TOUVOIR — site web et application Android de vidéosurveillance en Côte d’Ivoire",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:native-bridge": "esbuild src/native-bridge.mjs --bundle --format=iife --platform=browser --target=es2020 --outfile=assets/js/native-bridge.js",
+    "build:web": "node scripts/build-web.mjs",
+    "build": "npm run build:native-bridge && npm run build:web",
+    "check:js": "for f in assets/js/*.js src/*.mjs scripts/*.mjs; do node --check \"$f\" || exit 1; done",
+    "cap:sync": "npm run build && cap sync android",
+    "android:debug": "npm run cap:sync && cd android && ./gradlew assembleDebug",
+    "android:release": "npm run cap:sync && cd android && ./gradlew assembleRelease bundleRelease",
+    "serve:web": "python3 -m http.server 8001 --directory www"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/browser": "^8.0.5",
+    "@capacitor/core": "^8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.0",
+    "esbuild": "^0.28.2"
+  }
+}

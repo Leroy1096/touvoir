@@ -21,18 +21,20 @@ Site vitrine professionnel (9 pages : 7 pages principales et 2 pages légales) p
 
 ```bash
 cd touvoir
-python3 -m http.server 8000 --bind 0.0.0.0
-# puis ouvrir http://localhost:8000
+npm ci
+npm run build
+npm run serve:web
+# puis ouvrir http://localhost:8001
 ```
 
-(Aucune étape de build : les fichiers peuvent aussi être déposés tels quels sur n'importe quel hébergement statique.)
+Le build copie les 9 pages publiques et `assets/` dans `www/`. Ce même dossier est utilisé par Vercel et par l’application Android Capacitor (`ci.touvoir.app`). Voir **`DEPLOIEMENT.md`** pour GitHub, Vercel, la signature Android et les releases.
 
 ## Personnaliser
 
 ### Coordonnées de l'entreprise
 Le nom **TOUVOIR**, l’e-mail professionnel **touvoirci@gmail.com**, le numéro d’information/WhatsApp **+225 01 40 81 04 15** et le siège **San Pedro — Quartier Cité, Rue des Banques** sont intégrés. Le domaine de travail `touvoir.ci` reste à remplacer par le domaine définitif si besoin. Pour mettre à jour les coordonnées :
 
-1. **Numéro WhatsApp** : variable `WHATSAPP_NUMBER` dans `assets/js/data.js` + les liens officiels `api.whatsapp.com/send?phone=...` présents dans les fichiers HTML (bouton flottant et boutons d’envoi).
+1. **Numéro WhatsApp** : variable `WHATSAPP_NUMBER` dans `assets/js/data.js` + les liens officiels `https://wa.me/225...` présents dans les fichiers HTML (bouton flottant et boutons d’envoi). Conserver l’indicatif complet, y compris le `01` après `225`.
 2. **Téléphones / e-mail / adresse** : rechercher-remplacer dans les 9 pages HTML du site (en-tête, pied de page, pages Contact et Panne). Conservez l’encodage `&#64;` pour les adresses e-mail visibles et les `mailto:`.
 3. **Carte** : l'iframe Google Maps de `contact.html` (paramètre `q=...`).
 
@@ -70,7 +72,7 @@ Voir aussi `A-COMPLETER.md` pour la checklist de mise en ligne.
 - Balises `title` / `meta description` / OpenGraph propres à chaque page
 - Données structurées Schema.org `LocalBusiness` (page d'accueil)
 - `robots.txt` et `sitemap.xml` fournis à la racine (base de travail : `https://www.touvoir.ci/`, à remplacer par le domaine définitif)
-- Projet **Vercel** `touvoir` créé avec variables Supabase publiques ; configuration statique dans `vercel.json` (déploiement Git/CLI à lancer lors de la publication)
+- Projet **Vercel** `touvoir` configuré avec variables Supabase publiques, build `npm run build` et sortie `www/` ; procédure complète dans `DEPLOIEMENT.md`
 - HTML sémantique (`header`, `nav`, `main`, `section`, `footer`), fils d'Ariane
 - Textes alternatifs sur toutes les images, navigation au clavier, respect de `prefers-reduced-motion`
 - Images optimisées (~1,9 Mo au total) et `loading="lazy"`

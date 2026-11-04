@@ -58,6 +58,11 @@ function isAllowedOrigin(origin: string): boolean {
     'https://touvoir.vercel.app',
     'https://www.touvoir.ci',
     'https://touvoir.ci',
+    // Origines locales de l'application Capacitor (Android utilise
+    // androidScheme=https ; les autres variantes restent acceptées).
+    'https://localhost',
+    'http://localhost',
+    'capacitor://localhost',
   ]);
   const extra = clean(Deno.env.get('LEAD_ALLOWED_ORIGINS'), 1000)
     .split(',')

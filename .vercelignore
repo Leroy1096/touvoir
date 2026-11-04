@@ -4,6 +4,12 @@
 # Base de données, fonctions serveur et scripts de génération
 supabase/
 
+# Projet natif Android et ressources de génération d'icônes
+android/
+resources/
+.github/
+www/
+
 # Documentation interne et rapports
 *.md
 RAPPORT-AUDIT.md
