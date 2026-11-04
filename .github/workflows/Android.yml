@@ -52,7 +52,7 @@ jobs:
         run: npm run check:js
 
       - name: Construire le web et synchroniser Capacitor
-        run: npx cap sync android
+        run: npm run cap:sync
 
       - name: Compiler l'APK debug
         working-directory: android
@@ -124,7 +124,7 @@ jobs:
           echo "ANDROID_KEYSTORE_PATH=$keystore_path" >> "$GITHUB_ENV"
 
       - name: Construire le web et synchroniser Capacitor
-        run: npx cap sync android
+        run: npm run cap:sync
 
       - name: Compiler l'APK et l'AAB release signés
         working-directory: android
