@@ -10,8 +10,8 @@ Ce document décrit la publication reproductible du projet existant :
 ## Adresses de production
 
 - Site Vercel : https://touvoir.vercel.app
-- Dépôt GitHub : à renseigner après la première création du dépôt distant.
-- Dernière release Android : à renseigner après le premier tag publié.
+- Dépôt GitHub : https://github.com/Leroy1096/touvoir (privé)
+- Dernière release Android : https://github.com/Leroy1096/touvoir/releases (voir `v1.0`)
 
 ## Prérequis
 
