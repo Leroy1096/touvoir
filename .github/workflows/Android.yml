@@ -38,7 +38,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-          cache: Gradle
 
       - name: Installer le SDK Android 36
         shell: bash
@@ -106,7 +105,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-          cache: Gradle
 
       - name: Installer le SDK Android 36
         shell: bash
