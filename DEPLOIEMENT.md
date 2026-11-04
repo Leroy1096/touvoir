@@ -75,21 +75,16 @@ Utilisez `--public` uniquement si le code doit être visible par tout le monde. 
 
 ## Vercel
 
-Le projet Vercel existant est `touvoir`, avec le domaine `touvoir.vercel.app`.
+Le projet Vercel `touvoir` (ID `prj_JOMpk32Zerytr6Xw9FK5YlTPr0XC`) est **relié au dépôt GitHub** `Leroy1096/touvoir`, branche de production `main`, avec le domaine `touvoir.vercel.app`. Chaque push sur `main` déclenche automatiquement le déploiement de production et chaque pull request peut recevoir un aperçu Vercel.
 
-Dans Vercel :
+Réglages appliqués (aussi versionnés dans `vercel.json`) :
 
-1. ouvrir le projet `touvoir` ;
-2. `Settings` → `Git` → connecter le dépôt GitHub ;
-3. choisir la branche de production `main` ;
-4. vérifier :
-   - Framework Preset : `Other` / aucun framework ;
-   - Install Command : `npm ci` ;
-   - Build Command : `npm run build` ;
-   - Output Directory : `www` ;
-5. lancer un déploiement de production.
+- Framework Preset : `Other` / aucun framework ;
+- Install Command : `npm ci` ;
+- Build Command : `npm run build` ;
+- Output Directory : `www`.
 
-Ces réglages sont également versionnés dans `vercel.json`. Après connexion Git, chaque push sur `main` déclenche le déploiement de production et chaque pull request peut recevoir un aperçu Vercel.
+> Historique : l'ancien projet non relié (`prj_ftJANZUTQuwjJjr2fxWYnPqTM90J`) a été remplacé le 04/11/2026 par ce projet connecté à GitHub (application GitHub Vercel installée sur le compte), à réglages et variables identiques.
 
 Variables Vercel déjà prévues (publiques uniquement) :
 
