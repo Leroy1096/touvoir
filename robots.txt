@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /CONCEPTION-UI-UX.html
+
+Sitemap: https://www.touvoir.ci/sitemap.xml
